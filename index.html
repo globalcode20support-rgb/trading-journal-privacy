@@ -3,304 +3,421 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Política de Privacidad - Trading Journal</title>
-
-<meta name="description" content="Política de Privacidad de Trading Journal. Aplicación de diario de trading 100% privada que no recopila ni transmite datos.">
-
+<title>Privacy Policy — Trading Journal GlobalCode 2.0</title>
+<meta name="description" content="Política de Privacidad de Trading Journal GlobalCode 2.0. App 100% privada, sin servidores, sin rastreo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-
-body{
-font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-max-width:800px;
-margin:0 auto;
-padding:20px;
-line-height:1.6;
-color:#333;
-background:#f5f5f5
+:root{
+  --bg:#030608;--s1:#080e16;--s2:#0d1520;--s3:#131e2d;
+  --b1:#1a2840;--b2:#223258;
+  --acc:#2563eb;--acc2:#60a5fa;--acc3:#93c5fd;
+  --grn:#22c55e;--red:#ef4444;--gld:#f59e0b;--pur:#a855f7;
+  --txt:#f1f5f9;--txt2:#94a3b8;--txt3:#64748b;
+  --font:'Outfit',sans-serif;--mono:'JetBrains Mono',monospace;
+  --r:16px;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--font);overflow-x:hidden;line-height:1.6}
 
-.container{
-background:#fff;
-padding:40px;
-border-radius:8px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1)
-}
+/* cursor glow */
+.cursor-glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.07),transparent 70%);pointer-events:none;z-index:0;transition:transform .15s ease;transform:translate(-50%,-50%)}
 
-h1{
-color:#2563eb;
-border-bottom:3px solid #2563eb;
-padding-bottom:10px
-}
+/* lang bar */
+#lang-bar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,6,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(37,99,235,.15)}
+.lang-logo{font-size:14px;font-weight:800;color:var(--txt);letter-spacing:-.3px}
+.lang-logo span{color:var(--acc2)}
+.lang-btns{display:flex;gap:8px}
+.lang-btn{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;border:1px solid var(--b1);background:var(--s2);color:var(--txt2);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--font)}
+.lang-btn:hover{border-color:var(--acc);color:var(--acc2)}
+.lang-btn.active{background:rgba(37,99,235,.15);border-color:var(--acc);color:var(--acc2)}
 
-h2{
-color:#2563eb;
-margin-top:30px
-}
+/* hero */
+.hero{min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 60px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(37,99,235,.18),transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(168,85,247,.1),transparent 60%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.04) 1px,transparent 1px);background-size:60px 60px;animation:grid-move 20s linear infinite}
+@keyframes grid-move{0%{background-position:0 0}100%{background-position:60px 60px}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:30px;background:rgba(37,99,235,.1);border:1px solid rgba(96,165,250,.3);font-size:11px;font-weight:700;color:var(--acc2);letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;animation:badge-in .8s ease forwards}
+@keyframes badge-in{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.05;letter-spacing:-2.5px;margin-bottom:12px;animation:h1-in 1s ease forwards;opacity:0}
+@keyframes h1-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero h1 span{display:block;background:linear-gradient(135deg,var(--acc2),var(--pur),var(--acc2));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:gradient-shift 4s ease infinite}
+@keyframes gradient-shift{0%,100%{background-position:0%}50%{background-position:100%}}
+.hero-sub{font-size:16px;color:var(--txt2);max-width:500px;animation:fade-up .8s .3s ease forwards;opacity:0;margin-bottom:24px}
+@keyframes fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero-date{font-family:var(--mono);font-size:12px;color:var(--txt3);animation:fade-up .8s .5s ease forwards;opacity:0;padding:6px 14px;background:var(--s1);border:1px solid var(--b1);border-radius:20px}
 
-.summary{
-background:#dbeafe;
-border-left:4px solid #2563eb;
-padding:15px;
-margin:20px 0;
-border-radius:4px
-}
+/* glow divider */
+.glow-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(37,99,235,.4),rgba(168,85,247,.3),transparent)}
 
-.highlight{
-background:#dcfce7;
-border-left:4px solid #22c55e;
-padding:15px;
-margin:20px 0;
-border-radius:4px
-}
+/* main content */
+.content{max-width:780px;margin:0 auto;padding:60px 24px 80px}
 
-.warning{
-background:#fef3c7;
-border-left:4px solid #f59e0b;
-padding:15px;
-margin:20px 0;
-border-radius:4px
-}
+/* summary box */
+.summary-box{background:linear-gradient(135deg,rgba(37,99,235,.1),rgba(168,85,247,.07));border:1px solid rgba(96,165,250,.25);border-radius:var(--r);padding:24px 28px;margin-bottom:48px;position:relative;overflow:hidden}
+.summary-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--acc),var(--pur))}
+.summary-box h3{font-size:13px;font-weight:700;color:var(--acc2);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.summary-box p{font-size:14px;color:var(--txt2);line-height:1.7}
 
-.contact{
-background:#f3f4f6;
-padding:20px;
-border-radius:8px;
-margin-top:30px
-}
+/* policy section */
+.policy-section{margin-bottom:40px}
+.sect-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--pur));font-size:13px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 0 16px rgba(37,99,235,.3);margin-right:12px}
+.sect-header{display:flex;align-items:center;margin-bottom:14px}
+.sect-header h2{font-size:20px;font-weight:800;letter-spacing:-.3px}
+.policy-section p{font-size:14px;color:var(--txt2);line-height:1.75;margin-bottom:10px}
+.policy-section ul{margin:10px 0 10px 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.policy-section li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--txt2);line-height:1.6}
+.policy-section li::before{content:'→';color:var(--acc2);font-weight:700;flex-shrink:0;margin-top:1px}
+.policy-section strong{color:var(--txt);font-weight:600}
 
-a{
-color:#2563eb;
-text-decoration:none
-}
+/* callout boxes */
+.callout{border-radius:12px;padding:18px 20px;margin:16px 0;display:flex;gap:14px;align-items:flex-start}
+.callout.green{background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2)}
+.callout.blue{background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2)}
+.callout.gold{background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.2)}
+.callout.red{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2)}
+.callout-icon{font-size:22px;flex-shrink:0}
+.callout-text{font-size:13.5px;line-height:1.65;color:var(--txt2)}
+.callout-text strong{display:block;font-size:14px;margin-bottom:3px}
+.callout.green .callout-text strong{color:var(--grn)}
+.callout.blue .callout-text strong{color:var(--acc2)}
+.callout.gold .callout-text strong{color:var(--gld)}
+.callout.red .callout-text strong{color:var(--red)}
 
-a:hover{
-text-decoration:underline
-}
+/* no-collect grid */
+.no-collect-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:16px 0}
+.no-item{background:var(--s1);border:1px solid var(--b1);border-radius:12px;padding:14px;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt2);transition:all .2s}
+.no-item:hover{border-color:var(--acc);transform:translateY(-1px)}
+.no-item-icon{font-size:20px;flex-shrink:0}
 
-ul{
-margin:10px 0;
-padding-left:30px
-}
+/* contact card */
+.contact-card{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:28px;margin:40px 0;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--grn),var(--acc))}
+.contact-card h2{font-size:18px;font-weight:800;margin-bottom:18px}
+.contact-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--b1);font-size:14px}
+.contact-row:last-child{border-bottom:none}
+.contact-row a{color:var(--acc2);text-decoration:none;font-weight:500}
+.contact-row a:hover{text-decoration:underline}
+.contact-icon{font-size:20px;width:28px;text-align:center;flex-shrink:0}
+.contact-label{color:var(--txt2);min-width:110px}
 
-li{
-margin:8px 0
-}
+/* footer */
+footer{background:var(--s1);border-top:1px solid var(--b1);padding:40px 24px;text-align:center;color:var(--txt2);font-size:13px}
 
-@media(max-width:640px){
-.container{padding:20px}
-}
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:all .65s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
+/* particles */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.particle{position:absolute;border-radius:50%;animation:float-p var(--d,10s) ease-in-out infinite;opacity:var(--op,.12)}
+@keyframes float-p{0%,100%{transform:translate(0,0)}25%{transform:translate(var(--x1),var(--y1))}50%{transform:translate(var(--x2),var(--y2))}75%{transform:translate(var(--x3),var(--y3))}}
+
+@media(max-width:640px){.no-collect-grid{grid-template-columns:1fr 1fr}.cursor-glow{display:none}}
 </style>
-
 </head>
-
 <body>
 
-<div class="container">
+<div class="cursor-glow" id="cglow"></div>
+<div class="particles" id="particles"></div>
 
-<h1>📄 Política de Privacidad</h1>
-
-<p style="color:#6b7280;font-size:14px">
-Última actualización: 16 de marzo de 2026
-</p>
-
-<div class="summary">
-<strong>Resumen rápido:</strong><br>
-Trading Journal es una aplicación privada. Todos los datos se almacenan exclusivamente en el dispositivo del usuario. No recopilamos, transmitimos ni almacenamos datos en servidores externos.
+<!-- LANG BAR -->
+<div id="lang-bar">
+  <div class="lang-logo">Trading Journal <span>GlobalCode 2.0</span></div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('es')" id="btn-es"><span>🇪🇸</span> Español</button>
+    <button class="lang-btn" onclick="setLang('fr')" id="btn-fr"><span>🇫🇷</span> Français</button>
+    <button class="lang-btn" onclick="setLang('en')" id="btn-en"><span>🇬🇧</span> English</button>
+  </div>
 </div>
 
-
-<h2>1. Introducción</h2>
-
-<p>
-Esta Política de Privacidad describe cómo la aplicación Trading Journal gestiona la información del usuario.
-</p>
-
-<p>
-Trading Journal ha sido diseñada con la privacidad como principio fundamental. Los datos de trading pueden ser extremadamente sensibles, por lo que la aplicación funciona completamente de forma local en el dispositivo del usuario.
-</p>
-
-
-<h2>2. Datos que NO recopilamos</h2>
-
-<p>Trading Journal no recopila ni transmite:</p>
-
-<ul>
-
-<li>Información personal (nombre, email, teléfono)</li>
-<li>Datos de operaciones de trading</li>
-<li>Resultados o estrategias</li>
-<li>Imágenes o capturas de análisis</li>
-<li>Ubicación del usuario</li>
-<li>Datos de uso de la aplicación</li>
-<li>Información del dispositivo</li>
-<li>Datos analíticos o publicitarios</li>
-
-</ul>
-
-
-<h2>3. Almacenamiento local</h2>
-
-<p>Todos los datos se almacenan exclusivamente en el dispositivo del usuario utilizando tecnologías locales del navegador:</p>
-
-<ul>
-
-<li><strong>LocalStorage</strong> para configuración y operaciones</li>
-<li><strong>IndexedDB</strong> para imágenes y capturas</li>
-
-</ul>
-
-<p>
-Esto significa que los datos nunca abandonan el dispositivo del usuario.
-</p>
-
-
-<h2>4. Permisos de la aplicación</h2>
-
-<p>La aplicación puede solicitar permisos opcionales:</p>
-
-<ul>
-
-<li>Cámara (para tomar fotos de análisis)</li>
-<li>Galería o almacenamiento (para seleccionar imágenes)</li>
-<li>Notificaciones locales</li>
-
-</ul>
-
-<p>
-Todos estos permisos son opcionales y pueden revocarse en cualquier momento desde la configuración del dispositivo.
-</p>
-
-
-<h2>5. Servicios de terceros</h2>
-
-<p>Trading Journal no integra servicios de rastreo ni análisis como:</p>
-
-<ul>
-
-<li>Google Analytics</li>
-<li>Firebase Analytics</li>
-<li>Facebook SDK</li>
-<li>Redes publicitarias</li>
-
-</ul>
-
-<p>
-La aplicación puede permitir conexiones opcionales a plataformas externas como TradingView o Investing.com si el usuario decide utilizar dichas funcionalidades.
-</p>
-
-
-<h2>6. Seguridad de los datos</h2>
-
-<p>Debido a que los datos permanecen en el dispositivo del usuario, recomendamos:</p>
-
-<ul>
-
-<li>Proteger el dispositivo con contraseña o biometría</li>
-<li>Mantener el sistema operativo actualizado</li>
-<li>Realizar copias de seguridad periódicas</li>
-<li>Eliminar los datos antes de vender o transferir el dispositivo</li>
-
-</ul>
-
-
-<h2>7. Derechos del usuario</h2>
-
-<p>El usuario tiene control total sobre sus datos y puede:</p>
-
-<ul>
-
-<li>Acceder a todos los datos almacenados</li>
-<li>Editar cualquier información</li>
-<li>Exportar sus datos</li>
-<li>Eliminar completamente todos los datos</li>
-
-</ul>
-
-
-<h2>8. Cumplimiento RGPD</h2>
-
-<p>
-Aunque Trading Journal no recopila datos personales, se respetan los principios del Reglamento General de Protección de Datos (RGPD).
-</p>
-
-
-<h2>9. Menores de edad</h2>
-
-<p>
-La aplicación está destinada a usuarios mayores de 18 años debido a la naturaleza del trading financiero.
-</p>
-
-
-<h2>10. Cambios en esta política</h2>
-
-<p>
-Esta política puede actualizarse ocasionalmente. La fecha de actualización siempre se indicará en esta página.
-</p>
-
-
-<div class="contact">
-
-<h2>11. Contacto</h2>
-
-<p>
-Si tienes preguntas sobre esta Política de Privacidad puedes contactar con nosotros:
-</p>
-
-<p>
-
-📧 <strong>Email:</strong>  
-<a href="mailto:globalcode20.support@gmail.com">
-globalcode20.support@gmail.com
-</a>
-<br><br>
-
-🌐 <strong>GitHub:</strong>  
-<a href="https://github.com/globalcode20support-rgb" target="_blank">
-https://github.com/globalcode20support-rgb
-</a>
-<br><br>
-
-📱 <strong>Aplicación:</strong> Trading Journal  
-<br>
-
-🏢 <strong>Desarrollador:</strong> Global Code 2.0
-
-</p>
-
-<p>
-Tiempo de respuesta aproximado: hasta 72 horas.
-</p>
-
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-badge" data-i18n="badge">📄 POLÍTICA DE PRIVACIDAD</div>
+  <h1>Privacy<br><span data-i18n="hero_title">Policy</span></h1>
+  <p class="hero-sub" data-i18n="hero_sub">Trading Journal no recopila, transmite ni almacena ningún dato personal. Tus datos son solo tuyos.</p>
+  <div class="hero-date" data-i18n="last_update">Última actualización: 16 de marzo de 2026</div>
 </div>
 
+<div class="glow-divider"></div>
 
-<div class="highlight">
+<!-- CONTENT -->
+<div class="content">
 
-<strong>Privacidad garantizada</strong><br>
-Trading Journal ha sido diseñada para mantener todos los datos del usuario bajo su control total.
+  <!-- Summary -->
+  <div class="summary-box reveal">
+    <h3 data-i18n="summary_title">⚡ Resumen rápido</h3>
+    <p data-i18n="summary_text">Trading Journal es una aplicación completamente privada. Todos los datos se almacenan exclusivamente en tu dispositivo. No recopilamos, transmitimos ni almacenamos datos en servidores externos. Tus operaciones, estrategias y resultados no salen nunca de tu teléfono.</p>
+  </div>
+
+  <!-- 1 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">1</div><h2 data-i18n="s1_title">Introducción</h2></div>
+    <p data-i18n="s1_p1">Esta Política de Privacidad describe cómo la aplicación Trading Journal gestiona la información del usuario.</p>
+    <p data-i18n="s1_p2">Trading Journal ha sido diseñada con la privacidad como principio fundamental. Los datos de trading pueden ser extremadamente sensibles, por lo que la aplicación funciona completamente de forma local en el dispositivo del usuario.</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">2</div><h2 data-i18n="s2_title">Datos que NO recopilamos</h2></div>
+    <p data-i18n="s2_intro">Trading Journal no recopila ni transmite ninguno de estos datos:</p>
+    <div class="no-collect-grid">
+      <div class="no-item"><span class="no-item-icon">🚫</span><span data-i18n="nc1">Información personal</span></div>
+      <div class="no-item"><span class="no-item-icon">🚫</span><span data-i18n="nc2">Datos de trading</span></div>
+      <div class="no-item"><span class="no-item-icon">🚫</span><span data-i18n="nc3">Resultados o estrategias</span></div>
+      <div class="no-item"><span class="no-item-icon">🚫</span><span data-i18n="nc4">Imágenes o capturas</span></div>
+      <div class="no-item"><span class="no-item-icon">🚫</span><span data-i18n="nc5">Ubicación del usuario</span></div>
+      <div class="no-item"><span class="no-item-icon">🚫</span><span data-i18n="nc6">Datos de uso</span></div>
+      <div class="no-item"><span class="no-item-icon">🚫</span><span data-i18n="nc7">Info del dispositivo</span></div>
+      <div class="no-item"><span class="no-item-icon">🚫</span><span data-i18n="nc8">Datos publicitarios</span></div>
+    </div>
+    <div class="callout green">
+      <span class="callout-icon">✅</span>
+      <div class="callout-text"><strong data-i18n="nc_callout_h">Privacidad total garantizada</strong><span data-i18n="nc_callout_p"> Ningún dato abandona nunca tu dispositivo. No existe ningún servidor que reciba información tuya.</span></div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">3</div><h2 data-i18n="s3_title">Almacenamiento local</h2></div>
+    <p data-i18n="s3_p">Todos los datos se almacenan exclusivamente en tu dispositivo mediante tecnologías locales:</p>
+    <ul>
+      <li><span><strong>LocalStorage</strong> — <span data-i18n="s3_ls">configuración y operaciones de trading</span></span></li>
+      <li><span><strong>IndexedDB</strong> — <span data-i18n="s3_idb">imágenes y capturas de análisis</span></span></li>
+    </ul>
+    <div class="callout blue">
+      <span class="callout-icon">🔒</span>
+      <div class="callout-text"><strong data-i18n="s3_callout_h">Datos en tu dispositivo</strong><span data-i18n="s3_callout_p"> Si desinstales la app, todos los datos se eliminan con ella. Usa la función de Backup para guardar tus trades antes de desinstalar.</span></div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">4</div><h2 data-i18n="s4_title">Permisos de la aplicación</h2></div>
+    <p data-i18n="s4_p">La aplicación puede solicitar permisos opcionales para mejorar tu experiencia:</p>
+    <ul>
+      <li><span data-i18n="s4_cam">📷 Cámara — para tomar fotos de tus análisis de trading</span></li>
+      <li><span data-i18n="s4_gal">🖼️ Galería o almacenamiento — para adjuntar imágenes existentes</span></li>
+    </ul>
+    <p data-i18n="s4_revoke">Todos estos permisos son completamente opcionales y pueden revocarse en cualquier momento desde los ajustes de tu dispositivo.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">5</div><h2 data-i18n="s5_title">Servicios de terceros</h2></div>
+    <p data-i18n="s5_p">Trading Journal no integra ningún servicio de rastreo ni análisis:</p>
+    <ul>
+      <li><span data-i18n="s5_1">🚫 Google Analytics</span></li>
+      <li><span data-i18n="s5_2">🚫 Firebase Analytics</span></li>
+      <li><span data-i18n="s5_3">🚫 Facebook SDK</span></li>
+      <li><span data-i18n="s5_4">🚫 Redes publicitarias de ningún tipo</span></li>
+    </ul>
+    <p data-i18n="s5_prices">La app se conecta a fuentes de precios en tiempo real (Coinbase, open.er-api.com, goldprice.org) únicamente para mostrar cotizaciones en la calculadora de riesgo. No se envía ningún dato del usuario en estas consultas.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">6</div><h2 data-i18n="s6_title">Seguridad de los datos</h2></div>
+    <p data-i18n="s6_p">Dado que los datos permanecen en tu dispositivo, recomendamos estas buenas prácticas:</p>
+    <ul>
+      <li><span data-i18n="s6_1">Protege tu dispositivo con contraseña o biometría</span></li>
+      <li><span data-i18n="s6_2">Mantén el sistema operativo actualizado</span></li>
+      <li><span data-i18n="s6_3">Realiza copias de seguridad periódicas desde la app</span></li>
+      <li><span data-i18n="s6_4">Elimina tus datos antes de vender o transferir el dispositivo</span></li>
+    </ul>
+  </div>
+
+  <!-- 7 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">7</div><h2 data-i18n="s7_title">Derechos del usuario</h2></div>
+    <p data-i18n="s7_p">Como usuario tienes control total sobre tus datos y puedes:</p>
+    <ul>
+      <li><span data-i18n="s7_1">Acceder a todos los datos almacenados en cualquier momento</span></li>
+      <li><span data-i18n="s7_2">Editar o corregir cualquier información</span></li>
+      <li><span data-i18n="s7_3">Exportar todos tus trades en formato backup</span></li>
+      <li><span data-i18n="s7_4">Eliminar completamente todos los datos desde Ajustes</span></li>
+    </ul>
+  </div>
+
+  <!-- 8 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">8</div><h2 data-i18n="s8_title">Cumplimiento RGPD</h2></div>
+    <p data-i18n="s8_p">Aunque Trading Journal no recopila datos personales, respeta íntegramente los principios del Reglamento General de Protección de Datos (RGPD) de la Unión Europea: minimización de datos, transparencia y control total por parte del usuario.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">9</div><h2 data-i18n="s9_title">Menores de edad</h2></div>
+    <p data-i18n="s9_p">La aplicación está destinada a usuarios mayores de 18 años debido a la naturaleza financiera del trading. No recopilamos intencionalmente datos de menores.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="policy-section reveal">
+    <div class="sect-header"><div class="sect-num">10</div><h2 data-i18n="s10_title">Cambios en esta política</h2></div>
+    <p data-i18n="s10_p">Esta política puede actualizarse ocasionalmente para reflejar mejoras en la app o cambios legales. La fecha de actualización siempre aparecerá en esta página. Te recomendamos revisarla periódicamente.</p>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card reveal">
+    <h2 data-i18n="contact_title">11. Contacto</h2>
+    <div class="contact-row">
+      <span class="contact-icon">📧</span>
+      <span class="contact-label" data-i18n="contact_email_lbl">Email</span>
+      <a href="mailto:globalcode20.support@gmail.com">globalcode20.support@gmail.com</a>
+    </div>
+    <div class="contact-row">
+      <span class="contact-icon">🌐</span>
+      <span class="contact-label">GitHub</span>
+      <a href="https://github.com/globalcode20support-rgb" target="_blank">globalcode20support-rgb</a>
+    </div>
+    <div class="contact-row">
+      <span class="contact-icon">📱</span>
+      <span class="contact-label" data-i18n="contact_app_lbl">Aplicación</span>
+      <span style="color:var(--txt2)">Trading Journal GlobalCode 2.0</span>
+    </div>
+    <div class="contact-row">
+      <span class="contact-icon">🏢</span>
+      <span class="contact-label" data-i18n="contact_dev_lbl">Desarrollador</span>
+      <span style="color:var(--txt2)">Global Code 2.0</span>
+    </div>
+    <div class="contact-row">
+      <span class="contact-icon">⏱️</span>
+      <span class="contact-label" data-i18n="contact_time_lbl">Respuesta</span>
+      <span style="color:var(--txt2)" data-i18n="contact_time_val">Hasta 72 horas</span>
+    </div>
+  </div>
+
+  <!-- Final callouts -->
+  <div class="callout green reveal">
+    <span class="callout-icon">🛡️</span>
+    <div class="callout-text"><strong data-i18n="final_green_h">Privacidad garantizada</strong><span data-i18n="final_green_p"> Trading Journal ha sido diseñada para que todos tus datos permanezcan bajo tu control total en todo momento.</span></div>
+  </div>
+  <div class="callout gold reveal">
+    <span class="callout-icon">⚠️</span>
+    <div class="callout-text"><strong data-i18n="final_gold_h">Aviso legal</strong><span data-i18n="final_gold_p"> Esta aplicación no proporciona asesoramiento financiero. El trading conlleva riesgos significativos y cada usuario es responsable de sus propias decisiones de inversión.</span></div>
+  </div>
 
 </div>
 
+<div class="glow-divider"></div>
 
-<div class="warning">
+<footer>
+  <div style="font-size:28px;margin-bottom:12px">📄</div>
+  <div style="font-size:16px;font-weight:800;color:var(--txt);margin-bottom:6px">Trading Journal <span style="color:var(--acc2)">GlobalCode 2.0</span></div>
+  <div style="margin-bottom:12px" data-i18n="footer_copy">© 2026 Global Code 2.0 · Todos los derechos reservados</div>
+</footer>
 
-<strong>Aviso:</strong>  
-Esta aplicación no proporciona asesoramiento financiero. El trading conlleva riesgos y cada usuario es responsable de sus decisiones de inversión.
+<script>
+const T={
+  es:{
+    badge:"📄 POLÍTICA DE PRIVACIDAD",hero_title:"Policy",hero_sub:"Trading Journal no recopila, transmite ni almacena ningún dato personal. Tus datos son solo tuyos.",
+    last_update:"Última actualización: 16 de marzo de 2026",
+    summary_title:"⚡ Resumen rápido",summary_text:"Trading Journal es una aplicación completamente privada. Todos los datos se almacenan exclusivamente en tu dispositivo. No recopilamos, transmitimos ni almacenamos datos en servidores externos. Tus operaciones, estrategias y resultados no salen nunca de tu teléfono.",
+    s1_title:"Introducción",s1_p1:"Esta Política de Privacidad describe cómo la aplicación Trading Journal gestiona la información del usuario.",s1_p2:"Trading Journal ha sido diseñada con la privacidad como principio fundamental. Los datos de trading pueden ser extremadamente sensibles, por lo que la aplicación funciona completamente de forma local en el dispositivo del usuario.",
+    s2_title:"Datos que NO recopilamos",s2_intro:"Trading Journal no recopila ni transmite ninguno de estos datos:",nc1:"Información personal",nc2:"Datos de trading",nc3:"Resultados o estrategias",nc4:"Imágenes o capturas",nc5:"Ubicación del usuario",nc6:"Datos de uso",nc7:"Info del dispositivo",nc8:"Datos publicitarios",
+    nc_callout_h:"Privacidad total garantizada",nc_callout_p:" Ningún dato abandona nunca tu dispositivo. No existe ningún servidor que reciba información tuya.",
+    s3_title:"Almacenamiento local",s3_p:"Todos los datos se almacenan exclusivamente en tu dispositivo mediante tecnologías locales:",s3_ls:"configuración y operaciones de trading",s3_idb:"imágenes y capturas de análisis",
+    s3_callout_h:"Datos en tu dispositivo",s3_callout_p:" Si desinstales la app, todos los datos se eliminan con ella. Usa la función de Backup para guardar tus trades antes de desinstalar.",
+    s4_title:"Permisos de la aplicación",s4_p:"La aplicación puede solicitar permisos opcionales para mejorar tu experiencia:",s4_cam:"📷 Cámara — para tomar fotos de tus análisis de trading",s4_gal:"🖼️ Galería o almacenamiento — para adjuntar imágenes existentes",s4_revoke:"Todos estos permisos son completamente opcionales y pueden revocarse en cualquier momento desde los ajustes de tu dispositivo.",
+    s5_title:"Servicios de terceros",s5_p:"Trading Journal no integra ningún servicio de rastreo ni análisis:",s5_1:"🚫 Google Analytics",s5_2:"🚫 Firebase Analytics",s5_3:"🚫 Facebook SDK",s5_4:"🚫 Redes publicitarias de ningún tipo",s5_prices:"La app se conecta a fuentes de precios en tiempo real únicamente para mostrar cotizaciones en la calculadora de riesgo. No se envía ningún dato del usuario en estas consultas.",
+    s6_title:"Seguridad de los datos",s6_p:"Dado que los datos permanecen en tu dispositivo, recomendamos estas buenas prácticas:",s6_1:"Protege tu dispositivo con contraseña o biometría",s6_2:"Mantén el sistema operativo actualizado",s6_3:"Realiza copias de seguridad periódicas desde la app",s6_4:"Elimina tus datos antes de vender o transferir el dispositivo",
+    s7_title:"Derechos del usuario",s7_p:"Como usuario tienes control total sobre tus datos y puedes:",s7_1:"Acceder a todos los datos almacenados en cualquier momento",s7_2:"Editar o corregir cualquier información",s7_3:"Exportar todos tus trades en formato backup",s7_4:"Eliminar completamente todos los datos desde Ajustes",
+    s8_title:"Cumplimiento RGPD",s8_p:"Aunque Trading Journal no recopila datos personales, respeta íntegramente los principios del Reglamento General de Protección de Datos (RGPD) de la Unión Europea: minimización de datos, transparencia y control total por parte del usuario.",
+    s9_title:"Menores de edad",s9_p:"La aplicación está destinada a usuarios mayores de 18 años debido a la naturaleza financiera del trading. No recopilamos intencionalmente datos de menores.",
+    s10_title:"Cambios en esta política",s10_p:"Esta política puede actualizarse ocasionalmente para reflejar mejoras en la app o cambios legales. La fecha de actualización siempre aparecerá en esta página.",
+    contact_title:"11. Contacto",contact_email_lbl:"Email",contact_app_lbl:"Aplicación",contact_dev_lbl:"Desarrollador",contact_time_lbl:"Respuesta",contact_time_val:"Hasta 72 horas",
+    final_green_h:"Privacidad garantizada",final_green_p:" Trading Journal ha sido diseñada para que todos tus datos permanezcan bajo tu control total en todo momento.",
+    final_gold_h:"Aviso legal",final_gold_p:" Esta aplicación no proporciona asesoramiento financiero. El trading conlleva riesgos significativos y cada usuario es responsable de sus propias decisiones de inversión.",
+    footer_copy:"© 2026 Global Code 2.0 · Todos los derechos reservados"
+  },
+  fr:{
+    badge:"📄 POLITIQUE DE CONFIDENTIALITÉ",hero_title:"Confidentialité",hero_sub:"Trading Journal ne collecte, ne transmet ni ne stocke aucune donnée personnelle. Vos données vous appartiennent.",
+    last_update:"Dernière mise à jour : 16 mars 2026",
+    summary_title:"⚡ Résumé rapide",summary_text:"Trading Journal est une application entièrement privée. Toutes les données sont stockées exclusivement sur votre appareil. Nous ne collectons, transmettons ni stockons de données sur des serveurs externes. Vos opérations, stratégies et résultats ne quittent jamais votre téléphone.",
+    s1_title:"Introduction",s1_p1:"Cette Politique de Confidentialité décrit comment l'application Trading Journal gère les informations de l'utilisateur.",s1_p2:"Trading Journal a été conçue avec la confidentialité comme principe fondamental. Les données de trading peuvent être extrêmement sensibles, c'est pourquoi l'application fonctionne entièrement en local sur l'appareil de l'utilisateur.",
+    s2_title:"Données que nous NE collectons PAS",s2_intro:"Trading Journal ne collecte ni ne transmet aucune de ces données :",nc1:"Informations personnelles",nc2:"Données de trading",nc3:"Résultats ou stratégies",nc4:"Images ou captures",nc5:"Localisation de l'utilisateur",nc6:"Données d'utilisation",nc7:"Infos de l'appareil",nc8:"Données publicitaires",
+    nc_callout_h:"Confidentialité totale garantie",nc_callout_p:" Aucune donnée ne quitte jamais votre appareil. Il n'existe aucun serveur recevant vos informations.",
+    s3_title:"Stockage local",s3_p:"Toutes les données sont stockées exclusivement sur votre appareil via des technologies locales :",s3_ls:"configuration et opérations de trading",s3_idb:"images et captures d'analyse",
+    s3_callout_h:"Données sur votre appareil",s3_callout_p:" Si vous désinstallez l'app, toutes les données sont supprimées avec elle. Utilisez la fonction Backup pour sauvegarder vos trades avant de désinstaller.",
+    s4_title:"Autorisations de l'application",s4_p:"L'application peut demander des autorisations optionnelles pour améliorer votre expérience :",s4_cam:"📷 Caméra — pour photographier vos analyses de trading",s4_gal:"🖼️ Galerie ou stockage — pour joindre des images existantes",s4_revoke:"Toutes ces autorisations sont entièrement optionnelles et peuvent être révoquées à tout moment depuis les paramètres de votre appareil.",
+    s5_title:"Services tiers",s5_p:"Trading Journal n'intègre aucun service de suivi ni d'analyse :",s5_1:"🚫 Google Analytics",s5_2:"🚫 Firebase Analytics",s5_3:"🚫 Facebook SDK",s5_4:"🚫 Réseaux publicitaires d'aucune sorte",s5_prices:"L'app se connecte à des sources de prix en temps réel uniquement pour afficher les cotations dans la calculatrice de risque. Aucune donnée utilisateur n'est envoyée lors de ces requêtes.",
+    s6_title:"Sécurité des données",s6_p:"Puisque les données restent sur votre appareil, nous recommandons ces bonnes pratiques :",s6_1:"Protégez votre appareil avec un mot de passe ou la biométrie",s6_2:"Maintenez le système d'exploitation à jour",s6_3:"Effectuez des sauvegardes régulières depuis l'app",s6_4:"Supprimez vos données avant de vendre ou de transférer l'appareil",
+    s7_title:"Droits de l'utilisateur",s7_p:"En tant qu'utilisateur, vous avez un contrôle total sur vos données et pouvez :",s7_1:"Accéder à toutes les données stockées à tout moment",s7_2:"Modifier ou corriger toute information",s7_3:"Exporter tous vos trades au format backup",s7_4:"Supprimer complètement toutes les données depuis Paramètres",
+    s8_title:"Conformité RGPD",s8_p:"Bien que Trading Journal ne collecte pas de données personnelles, elle respecte intégralement les principes du Règlement Général sur la Protection des Données (RGPD) de l'Union Européenne.",
+    s9_title:"Mineurs",s9_p:"L'application est destinée aux utilisateurs de plus de 18 ans en raison de la nature financière du trading. Nous ne collectons pas intentionnellement de données sur les mineurs.",
+    s10_title:"Modifications de cette politique",s10_p:"Cette politique peut être mise à jour occasionnellement pour refléter des améliorations de l'app ou des changements légaux. La date de mise à jour apparaîtra toujours sur cette page.",
+    contact_title:"11. Contact",contact_email_lbl:"E-mail",contact_app_lbl:"Application",contact_dev_lbl:"Développeur",contact_time_lbl:"Réponse",contact_time_val:"Jusqu'à 72 heures",
+    final_green_h:"Confidentialité garantie",final_green_p:" Trading Journal a été conçue pour que toutes vos données restent sous votre contrôle total à tout moment.",
+    final_gold_h:"Avertissement légal",final_gold_p:" Cette application ne fournit pas de conseils financiers. Le trading comporte des risques significatifs et chaque utilisateur est responsable de ses propres décisions d'investissement.",
+    footer_copy:"© 2026 Global Code 2.0 · Tous droits réservés"
+  },
+  en:{
+    badge:"📄 PRIVACY POLICY",hero_title:"Policy",hero_sub:"Trading Journal does not collect, transmit or store any personal data. Your data belongs only to you.",
+    last_update:"Last updated: March 16, 2026",
+    summary_title:"⚡ Quick summary",summary_text:"Trading Journal is a fully private application. All data is stored exclusively on your device. We do not collect, transmit or store data on external servers. Your trades, strategies and results never leave your phone.",
+    s1_title:"Introduction",s1_p1:"This Privacy Policy describes how the Trading Journal application handles user information.",s1_p2:"Trading Journal has been designed with privacy as a core principle. Trading data can be extremely sensitive, which is why the application runs entirely locally on the user's device.",
+    s2_title:"Data we do NOT collect",s2_intro:"Trading Journal does not collect or transmit any of the following data:",nc1:"Personal information",nc2:"Trading data",nc3:"Results or strategies",nc4:"Images or screenshots",nc5:"User location",nc6:"Usage data",nc7:"Device information",nc8:"Advertising data",
+    nc_callout_h:"Total privacy guaranteed",nc_callout_p:" No data ever leaves your device. There is no server receiving any information from you.",
+    s3_title:"Local storage",s3_p:"All data is stored exclusively on your device using local technologies:",s3_ls:"settings and trading operations",s3_idb:"images and analysis screenshots",
+    s3_callout_h:"Data stays on your device",s3_callout_p:" If you uninstall the app, all data is deleted with it. Use the Backup function to save your trades before uninstalling.",
+    s4_title:"App permissions",s4_p:"The application may request optional permissions to improve your experience:",s4_cam:"📷 Camera — to take photos of your trading analysis",s4_gal:"🖼️ Gallery or storage — to attach existing images",s4_revoke:"All these permissions are completely optional and can be revoked at any time from your device settings.",
+    s5_title:"Third-party services",s5_p:"Trading Journal does not integrate any tracking or analytics services:",s5_1:"🚫 Google Analytics",s5_2:"🚫 Firebase Analytics",s5_3:"🚫 Facebook SDK",s5_4:"🚫 Advertising networks of any kind",s5_prices:"The app connects to real-time price sources solely to display quotes in the risk calculator. No user data is sent in these requests.",
+    s6_title:"Data security",s6_p:"Since data remains on your device, we recommend these best practices:",s6_1:"Protect your device with a password or biometrics",s6_2:"Keep your operating system up to date",s6_3:"Make regular backups from within the app",s6_4:"Delete your data before selling or transferring your device",
+    s7_title:"User rights",s7_p:"As a user you have full control over your data and can:",s7_1:"Access all stored data at any time",s7_2:"Edit or correct any information",s7_3:"Export all your trades in backup format",s7_4:"Completely delete all data from Settings",
+    s8_title:"GDPR compliance",s8_p:"Although Trading Journal does not collect personal data, it fully respects the principles of the General Data Protection Regulation (GDPR) of the European Union: data minimisation, transparency and full user control.",
+    s9_title:"Minors",s9_p:"The application is intended for users over 18 years of age due to the financial nature of trading. We do not intentionally collect data from minors.",
+    s10_title:"Changes to this policy",s10_p:"This policy may be updated occasionally to reflect app improvements or legal changes. The update date will always appear on this page.",
+    contact_title:"11. Contact",contact_email_lbl:"Email",contact_app_lbl:"Application",contact_dev_lbl:"Developer",contact_time_lbl:"Response time",contact_time_val:"Up to 72 hours",
+    final_green_h:"Privacy guaranteed",final_green_p:" Trading Journal has been designed so that all your data remains under your full control at all times.",
+    final_gold_h:"Legal notice",final_gold_p:" This application does not provide financial advice. Trading involves significant risks and each user is responsible for their own investment decisions.",
+    footer_copy:"© 2026 Global Code 2.0 · All rights reserved"
+  }
+};
 
-</div>
+let lang='es';
+function setLang(l){
+  lang=l;
+  ['es','fr','en'].forEach(x=>document.getElementById('btn-'+x).classList.toggle('active',x===l));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(T[l][k]!==undefined) el.innerHTML=T[l][k];
+  });
+  document.documentElement.lang=l;
+}
 
+// cursor glow
+const cg=document.getElementById('cglow');
+document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px';});
 
-<p style="text-align:center;color:#6b7280;margin-top:40px;padding-top:20px;border-top:1px solid #e5e7eb;font-size:13px">
+// particles
+const pc=document.getElementById('particles');
+for(let i=0;i<14;i++){
+  const p=document.createElement('div'); p.className='particle';
+  const size=Math.random()*3+2;
+  const colors=['rgba(37,99,235','rgba(96,165,250','rgba(168,85,247','rgba(34,197,94'];
+  const c=colors[Math.floor(Math.random()*colors.length)];
+  Object.assign(p.style,{
+    width:size+'px',height:size+'px',left:Math.random()*100+'%',top:Math.random()*100+'%',
+    background:c+',.6)',
+    '--d':(8+Math.random()*12)+'s','--op':(.05+Math.random()*.12),
+    '--x1':(-30+Math.random()*60)+'px','--y1':(-30+Math.random()*60)+'px',
+    '--x2':(-30+Math.random()*60)+'px','--y2':(-30+Math.random()*60)+'px',
+    '--x3':(-30+Math.random()*60)+'px','--y3':(-30+Math.random()*60)+'px',
+    animationDelay:Math.random()*8+'s'
+  });
+  pc.appendChild(p);
+}
 
-© 2026 Trading Journal  
-<br>
-Desarrollado por Global Code 2.0
-
-</p>
-
-</div>
-
+// reveal on scroll
+const revEls=document.querySelectorAll('.reveal');
+const revObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:.08});
+revEls.forEach(r=>revObs.observe(r));
+</script>
 </body>
 </html>
+
